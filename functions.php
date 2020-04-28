@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // Set our theme version.
-define( 'DEVELOPE_VERSION', '2.0.3' );
+define( 'DEVELOPE_VERSION', '2.0.4' );
 
 if ( ! function_exists( 'develope_setup' ) ) {
 	add_action( 'after_setup_theme', 'develope_setup' );
