@@ -1,12 +1,12 @@
 === DeveloPress ===
-Contributors: matiasmann
+Contributors: developress
 Donate link: https://developress.org/ongoing-development/
 License: GPLv2 or later
-License URI: https://www.gnu.org/licenses/gpl-2.0.html
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: two-columns, three-columns, one-column, right-sidebar, left-sidebar, footer-widgets, blog, e-commerce, flexible-header, full-width-template, buddypress, custom-header, custom-background, custom-menu, custom-colors, sticky-post, threaded-comments, translation-ready, rtl-language-support, featured-images, theme-options
 Requires at least: 4.5
-Tested up to: 5.4
-Stable tag: 2.0.4
+Tested up to: 5.4.1
+Stable tag: 2.0.6
 
 DeveloPress is a lightweight WordPress theme Framework with native support for WooCommerce and Gutenberg.
 
@@ -23,8 +23,8 @@ Learn more and check out our [powerful premium version](https://developress.org)
 
 = From within WordPress =
 1. Visit "Appearance > Themes > Add New"
-1. Search for "DeveloPress"
-1. Install and activate
+2. Search for "DeveloPress"
+3. Install and Activate
 
 == Frequently Asked Questions ==
 
@@ -58,11 +58,17 @@ DeveloPress has up to +5 widget areas which you can add widgets to in Appearance
 = How can I make my site look like your screenshot? =
 If you want to replicate the screenshot you see on WordPress.org, please refer to [this article](https://docs.developress.com/article/replicating-the-screenshot/).
 
-== License ==
+== Copyright ==
 
 DeveloPress is licensed under the GNU General Public License v2 or later
 
 More details [here](http://www.gnu.org/licenses/gpl-2.0.html).
+
+DeveloPress bundles the following third-party resources:
+
+= ally =
+Source: https://github.com/medialize/ally.js
+MIT License: https://github.com/medialize/ally.js/blob/master/LICENSE.txt
 
 = Font Awesome =
 
@@ -91,10 +97,22 @@ GPLv2 or later License: https://www.gnu.org/licenses/gpl-2.0.html
 
 = GeneratePress =
 
-By Tom Usborne, http://generatepress.com
-GPLv2 or later License: https://www.gnu.org/licenses/gpl-2.0.html
+Code from GeneratePress by Tom Usborne
+Copyright (c) 2016-2020
+License: GPLv2 or later License: https://www.gnu.org/licenses/gpl-2.0.html
+Source: https://wordpress.org/themes/generatepress/
 
 == Changelog ==
+
+= 2.0.6 =
+* Fix: Updated Readme with copyright info
+* Fix: Updated files and various fixes run through Theme Sniffer
+
+= 2.0.5 =
+* Fix: Updated Screenshot
+
+= 2.0.4 =
+* Fix: Updated Screenshot
 
 = 2.0.3 =
 Release date: April 28, 2020

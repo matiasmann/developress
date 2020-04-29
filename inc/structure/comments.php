@@ -22,7 +22,7 @@ if ( ! function_exists( 'develope_comment' ) ) {
 
 		<li id="comment-<?php comment_ID(); ?>" <?php comment_class(); ?>>
 			<div class="comment-body">
-				<?php _e( 'Pingback:', 'developress' ); // WPCS: XSS OK. ?> <?php comment_author_link(); ?> <?php edit_comment_link( __( 'Edit', 'developress' ), '<span class="edit-link">', '</span>' ); ?>
+				<?php _e( 'Pingback:', 'developress' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?> <?php comment_author_link(); ?> <?php edit_comment_link( __( 'Edit', 'developress' ), '<span class="edit-link">', '</span>' ); ?>
 			</div>
 
 		<?php else : ?>
@@ -43,7 +43,7 @@ if ( ! function_exists( 'develope_comment' ) ) {
 						<div class="entry-meta comment-metadata">
 							<a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>">
 								<time datetime="<?php comment_time( 'c' ); ?>" itemprop="datePublished">
-									<?php printf( // WPCS: XSS OK.
+									<?php printf( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 										/* translators: 1: date, 2: time */
 										_x( '%1$s at %2$s', '1: date, 2: time', 'developress' ),
 										get_comment_date(),
@@ -56,7 +56,7 @@ if ( ! function_exists( 'develope_comment' ) ) {
 					</div><!-- .comment-author-info -->
 
 					<?php if ( '0' == $comment->comment_approved ) : ?>
-						<p class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'developress' ); // WPCS: XSS OK. ?></p>
+						<p class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'developress' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
 					<?php endif; ?>
 				</footer><!-- .comment-meta -->
 

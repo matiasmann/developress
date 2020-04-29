@@ -193,11 +193,12 @@ if ( ! function_exists( 'develope_get_link_url' ) ) {
 	 *
 	 * @see get_url_in_content()
 	 * @return string The Link format URL.
+	 * https://wpcom-themes.svn.automattic.com/adaption/inc/extras.php
 	 */
 	function develope_get_link_url() {
 		$has_url = get_url_in_content( get_the_content() );
 
-		return $has_url ? $has_url : apply_filters( 'the_permalink', get_permalink() );
+		return ( $has_url ) ? $has_url : apply_filters( 'the_permalink', get_permalink() );
 	}
 }
 

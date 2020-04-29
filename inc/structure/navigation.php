@@ -283,7 +283,7 @@ if ( ! function_exists( 'develope_navigation_search' ) ) {
 			return;
 		}
 
-		echo apply_filters( 'develope_navigation_search_output', sprintf( // WPCS: XSS ok, sanitization ok.
+		echo apply_filters( 'develope_navigation_search_output', sprintf( // phpcs:ignore Standard.Category.SniffName.ErrorCode.
 			'<form method="get" class="search-form navigation-search" action="%1$s">
 				<input type="search" class="search-field" value="%2$s" name="s" title="%3$s" />
 			</form>',

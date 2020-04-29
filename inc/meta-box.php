@@ -236,7 +236,7 @@ function develope_do_layout_meta_box( $post ) {
 
 						<?php if ( ! defined( 'DP_PREMIUM_VERSION' ) ) : ?>
 							<span style="display:block;padding-top:1em;border-top:1px solid #EFEFEF;">
-								<a href="<?php echo develope_get_premium_url( 'https://developress.org/downloads/develope-disable-elements' ); // WPCS: XSS ok, sanitization ok. ?>" target="_blank"><?php esc_html_e( 'Premium module available', 'developress' ); ?></a>
+								<a href="<?php echo develope_get_premium_url( 'https://developress.org/downloads/develope-disable-elements' ); // phpcs:ignore Standard.Category.SniffName.ErrorCode. ?>" target="_blank"><?php esc_html_e( 'Premium module available', 'developress' ); ?></a>
 							</span>
 						<?php endif; ?>
 					</div>

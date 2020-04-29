@@ -9,14 +9,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-if ( class_exists( 'WP_Customize_Section' ) && ! class_exists( 'DeveloPress_Upsell_Section' ) ) {
+if ( class_exists( 'WP_Customize_Section' ) && ! class_exists( 'Develope_Upsell_Section' ) ) {
 	/**
 	 * Create our upsell section.
 	 * Escape your URL in the Customizer using esc_url().
 	 *
 	 * @since unknown
 	 */
-	class DeveloPress_Upsell_Section extends WP_Customize_Section {
+	class Develope_Upsell_Section extends WP_Customize_Section {
 		public $type = 'dp-upsell-section';
 		public $pro_url = '';
 		public $pro_text = '';

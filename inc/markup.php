@@ -18,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @param string|array $class One or more classes to add to the class list.
  */
 function develope_do_element_classes( $context, $class = '' ) {
-	echo 'class="' . join( ' ', develope_get_element_classes( $context, $class ) ) . '"'; // WPCS: XSS ok, sanitization ok.
+	echo 'class="' . join( ' ', develope_get_element_classes( $context, $class ) ) . '"'; // phpcs:ignore Standard.Category.SniffName.ErrorCode.
 }
 
 /**
@@ -131,7 +131,7 @@ function develope_get_microdata( $context ) {
  * @return string The microdata.
  */
 function develope_do_microdata( $context ) {
-	echo develope_get_microdata( $context ); // WPCS: XSS ok, sanitization ok.
+	echo develope_get_microdata( $context ); // phpcs:ignore Standard.Category.SniffName.ErrorCode.
 }
 
 if ( ! function_exists( 'develope_body_classes' ) ) {

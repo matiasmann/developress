@@ -46,11 +46,11 @@ if ( ! function_exists( 'develope_settings_page' ) ) {
 				<div class="dp-masthead clearfix">
 					<div class="dp-container">
 						<div class="dp-title">
-							<a href="<?php echo develope_get_premium_url( 'https://developress.org' ); // WPCS: XSS ok, sanitization ok. ?>" target="_blank">DeveloPress</a> <span class="dp-version"><?php echo DEVELOPE_VERSION; // WPCS: XSS ok ?></span>
+							<a href="<?php echo develope_get_premium_url( 'https://developress.org' ); // phpcs:ignore Standard.Category.SniffName.ErrorCode. ?>" target="_blank">DeveloPress</a> <span class="dp-version"><?php echo DEVELOPE_VERSION; // WPCS: XSS ok ?></span>
 						</div>
 						<div class="dp-masthead-links">
 							<?php if ( ! defined( 'DP_PREMIUM_VERSION' ) ) : ?>
-								<a style="font-weight: bold;" href="<?php echo develope_get_premium_url( 'https://developress.org/premium/' ); // WPCS: XSS ok, sanitization ok. ?>" target="_blank"><?php esc_html_e( 'Premium', 'developress' );?></a>
+								<a style="font-weight: bold;" href="<?php echo develope_get_premium_url( 'https://developress.org/premium/' ); // phpcs:ignore Standard.Category.SniffName.ErrorCode. ?>" target="_blank"><?php esc_html_e( 'Premium', 'developress' );?></a>
 							<?php endif; ?>
 							<a href="<?php echo esc_url( 'https://developress.org/support' ); ?>" target="_blank"><?php esc_html_e( 'Support', 'developress' ); ?></a>
 							<a href="<?php echo esc_url( 'https://docs.developress.com' ); ?>" target="_blank"><?php esc_html_e( 'Documentation', 'developress' );?></a>

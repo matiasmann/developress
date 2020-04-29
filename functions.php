@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // Set our theme version.
-define( 'DEVELOPE_VERSION', '2.0.4' );
+define( 'DEVELOPE_VERSION', '2.0.6' );
 
 if ( ! function_exists( 'develope_setup' ) ) {
 	add_action( 'after_setup_theme', 'develope_setup' );
@@ -65,34 +65,34 @@ if ( ! function_exists( 'develope_setup' ) ) {
 /**
  * Get all necessary theme files
  */
-$theme_dir = get_template_directory();
+$develope_theme_dir = get_template_directory();
 
-require $theme_dir . '/inc/theme-functions.php';
-require $theme_dir . '/inc/defaults.php';
-require $theme_dir . '/inc/class-css.php';
-require $theme_dir . '/inc/css-output.php';
-require $theme_dir . '/inc/general.php';
-require $theme_dir . '/inc/customizer.php';
-require $theme_dir . '/inc/markup.php';
-require $theme_dir . '/inc/typography.php';
-require $theme_dir . '/inc/plugin-compat.php';
-require $theme_dir . '/inc/block-editor.php';
-require $theme_dir . '/inc/migrate.php';
-require $theme_dir . '/inc/deprecated.php';
+require $develope_theme_dir . '/inc/theme-functions.php';
+require $develope_theme_dir . '/inc/defaults.php';
+require $develope_theme_dir . '/inc/class-css.php';
+require $develope_theme_dir . '/inc/css-output.php';
+require $develope_theme_dir . '/inc/general.php';
+require $develope_theme_dir . '/inc/customizer.php';
+require $develope_theme_dir . '/inc/markup.php';
+require $develope_theme_dir . '/inc/typography.php';
+require $develope_theme_dir . '/inc/plugin-compat.php';
+require $develope_theme_dir . '/inc/block-editor.php';
+require $develope_theme_dir . '/inc/migrate.php';
+require $develope_theme_dir . '/inc/deprecated.php';
 
 if ( is_admin() ) {
-	require $theme_dir . '/inc/meta-box.php';
-	require $theme_dir . '/inc/dashboard.php';
+	require $develope_theme_dir . '/inc/meta-box.php';
+	require $develope_theme_dir . '/inc/dashboard.php';
 }
 
 /**
  * Load our theme structure
  */
-require $theme_dir . '/inc/structure/archives.php';
-require $theme_dir . '/inc/structure/comments.php';
-require $theme_dir . '/inc/structure/featured-images.php';
-require $theme_dir . '/inc/structure/footer.php';
-require $theme_dir . '/inc/structure/header.php';
-require $theme_dir . '/inc/structure/navigation.php';
-require $theme_dir . '/inc/structure/post-meta.php';
-require $theme_dir . '/inc/structure/sidebars.php';
+require $develope_theme_dir . '/inc/structure/archives.php';
+require $develope_theme_dir . '/inc/structure/comments.php';
+require $develope_theme_dir . '/inc/structure/featured-images.php';
+require $develope_theme_dir . '/inc/structure/footer.php';
+require $develope_theme_dir . '/inc/structure/header.php';
+require $develope_theme_dir . '/inc/structure/navigation.php';
+require $develope_theme_dir . '/inc/structure/post-meta.php';
+require $develope_theme_dir . '/inc/structure/sidebars.php';

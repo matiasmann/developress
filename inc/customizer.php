@@ -52,7 +52,7 @@ if ( ! function_exists( 'develope_customize_register' ) ) {
 		}
 
 		if ( method_exists( $wp_customize, 'register_section_type' ) ) {
-			$wp_customize->register_section_type( 'DeveloPress_Upsell_Section' );
+			$wp_customize->register_section_type( 'Develope_Upsell_Section' );
 		}
 
 		if ( isset( $wp_customize->selective_refresh ) ) {
@@ -69,7 +69,7 @@ if ( ! function_exists( 'develope_customize_register' ) ) {
 
 		if ( ! defined( 'DP_PREMIUM_VERSION' ) ) {
 			$wp_customize->add_section(
-				new DeveloPress_Upsell_Section( $wp_customize, 'developress_upsell_section',
+				new Develope_Upsell_Section( $wp_customize, 'develope_upsell_section',
 					array(
 						'pro_text' => __( 'Premium Modules Available', 'developress' ),
 						'pro_url' => develope_get_premium_url( 'https://developress.org/premium' ),

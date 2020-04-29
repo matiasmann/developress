@@ -83,7 +83,7 @@ if ( ! function_exists( 'develope_add_footer_info' ) ) {
 			__( 'DeveloPress', 'developress' )
 		);
 
-		echo apply_filters( 'develope_copyright', $copyright ); // WPCS: XSS ok.
+		echo apply_filters( 'develope_copyright', $copyright ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	}
 }
 
@@ -208,7 +208,7 @@ if ( ! function_exists( 'develope_back_to_top' ) ) {
 			return;
 		}
 
-		echo apply_filters( 'develope_back_to_top_output', sprintf( // WPCS: XSS ok.
+		echo apply_filters( 'develope_back_to_top_output', sprintf( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			'<a title="%1$s" rel="nofollow" href="#" class="develope-back-to-top" style="opacity:0;visibility:hidden;" data-scroll-speed="%2$s" data-start-scroll="%3$s">
 				<span class="screen-reader-text">%5$s</span>
 				%6$s

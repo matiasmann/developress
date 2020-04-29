@@ -23,7 +23,7 @@ if ( ! function_exists( 'develope_archive_title' ) ) {
 
 		$clearfix = is_author() ? ' clearfix' : '';
 		?>
-		<header class="page-header<?php echo $clearfix; // WPCS: XSS ok, sanitization ok. ?>">
+		<header class="page-header<?php echo $clearfix; // phpcs:ignore Standard.Category.SniffName.ErrorCode. ?>">
 			<?php
 			/**
 			 * develope_before_archive_title hook.
@@ -100,11 +100,11 @@ function develope_do_archive_description() {
 	$term_description = term_description();
 
 	if ( ! empty( $term_description ) ) {
-		printf( '<div class="taxonomy-description">%s</div>', $term_description ); // WPCS: XSS ok, sanitization ok.
+		printf( '<div class="taxonomy-description">%s</div>', $term_description ); // phpcs:ignore Standard.Category.SniffName.ErrorCode.
 	}
 
 	if ( get_the_author_meta( 'description' ) && is_author() ) {
-		echo '<div class="author-info">' . get_the_author_meta( 'description' ) . '</div>'; // WPCS: XSS ok, sanitization ok.
+		echo '<div class="author-info">' . get_the_author_meta( 'description' ) . '</div>'; // phpcs:ignore Standard.Category.SniffName.ErrorCode.
 	}
 
 	/**

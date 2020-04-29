@@ -207,7 +207,7 @@ if ( ! function_exists( 'develope_right_sidebar_class' ) ) {
 	 */
 	function develope_right_sidebar_class( $class = '' ) {
 		// Separates classes with a single space, collates classes for post DIV
-		echo 'class="' . join( ' ', develope_get_right_sidebar_class( $class ) ) . '"'; // WPCS: XSS ok, sanitization ok.
+		echo 'class="' . join( ' ', develope_get_right_sidebar_class( $class ) ) . '"'; // phpcs:ignore Standard.Category.SniffName.ErrorCode.
 	}
 }
 
@@ -246,7 +246,7 @@ if ( ! function_exists( 'develope_left_sidebar_class' ) ) {
 	 */
 	function develope_left_sidebar_class( $class = '' ) {
 		// Separates classes with a single space, collates classes for post DIV
-		echo 'class="' . join( ' ', develope_get_left_sidebar_class( $class ) ) . '"'; // WPCS: XSS ok, sanitization ok.
+		echo 'class="' . join( ' ', develope_get_left_sidebar_class( $class ) ) . '"'; // phpcs:ignore Standard.Category.SniffName.ErrorCode.
 	}
 }
 
@@ -285,7 +285,7 @@ if ( ! function_exists( 'develope_content_class' ) ) {
 	 */
 	function develope_content_class( $class = '' ) {
 		// Separates classes with a single space, collates classes for post DIV
-		echo 'class="' . join( ' ', develope_get_content_class( $class ) ) . '"'; // WPCS: XSS ok, sanitization ok.
+		echo 'class="' . join( ' ', develope_get_content_class( $class ) ) . '"'; // phpcs:ignore Standard.Category.SniffName.ErrorCode.
 	}
 }
 
@@ -324,7 +324,7 @@ if ( ! function_exists( 'develope_header_class' ) ) {
 	 */
 	function develope_header_class( $class = '' ) {
 		// Separates classes with a single space, collates classes for post DIV
-		echo 'class="' . join( ' ', develope_get_header_class( $class ) ) . '"'; // WPCS: XSS ok, sanitization ok.
+		echo 'class="' . join( ' ', develope_get_header_class( $class ) ) . '"'; // phpcs:ignore Standard.Category.SniffName.ErrorCode.
 	}
 }
 
@@ -363,7 +363,7 @@ if ( ! function_exists( 'develope_inside_header_class' ) ) {
 	 */
 	function develope_inside_header_class( $class = '' ) {
 		// Separates classes with a single space, collates classes for post DIV
-		echo 'class="' . join( ' ', develope_get_inside_header_class( $class ) ) . '"'; // WPCS: XSS ok, sanitization ok.
+		echo 'class="' . join( ' ', develope_get_inside_header_class( $class ) ) . '"'; // phpcs:ignore Standard.Category.SniffName.ErrorCode.
 	}
 }
 
@@ -402,7 +402,7 @@ if ( ! function_exists( 'develope_container_class' ) ) {
 	 */
 	function develope_container_class( $class = '' ) {
 		// Separates classes with a single space, collates classes for post DIV
-		echo 'class="' . join( ' ', develope_get_container_class( $class ) ) . '"'; // WPCS: XSS ok, sanitization ok.
+		echo 'class="' . join( ' ', develope_get_container_class( $class ) ) . '"'; // phpcs:ignore Standard.Category.SniffName.ErrorCode.
 	}
 }
 
@@ -441,7 +441,7 @@ if ( ! function_exists( 'develope_navigation_class' ) ) {
 	 */
 	function develope_navigation_class( $class = '' ) {
 		// Separates classes with a single space, collates classes for post DIV
-		echo 'class="' . join( ' ', develope_get_navigation_class( $class ) ) . '"'; // WPCS: XSS ok, sanitization ok.
+		echo 'class="' . join( ' ', develope_get_navigation_class( $class ) ) . '"'; // phpcs:ignore Standard.Category.SniffName.ErrorCode.
 	}
 }
 
@@ -494,7 +494,7 @@ if ( ! function_exists( 'develope_inside_navigation_class' ) ) {
 		$return = apply_filters( 'develope_inside_navigation_class', $classes, $class );
 
 		// Separates classes with a single space, collates classes for post DIV
-		echo 'class="' . join( ' ', $return ) . '"'; // WPCS: XSS ok, sanitization ok.
+		echo 'class="' . join( ' ', $return ) . '"'; // phpcs:ignore Standard.Category.SniffName.ErrorCode.
 	}
 }
 
@@ -507,7 +507,7 @@ if ( ! function_exists( 'develope_menu_class' ) ) {
 	 */
 	function develope_menu_class( $class = '' ) {
 		// Separates classes with a single space, collates classes for post DIV
-		echo 'class="' . join( ' ', develope_get_menu_class( $class ) ) . '"'; // WPCS: XSS ok, sanitization ok.
+		echo 'class="' . join( ' ', develope_get_menu_class( $class ) ) . '"'; // phpcs:ignore Standard.Category.SniffName.ErrorCode.
 	}
 }
 
@@ -546,7 +546,7 @@ if ( ! function_exists( 'develope_main_class' ) ) {
 	 */
 	function develope_main_class( $class = '' ) {
 		// Separates classes with a single space, collates classes for post DIV
-		echo 'class="' . join( ' ', develope_get_main_class( $class ) ) . '"'; // WPCS: XSS ok, sanitization ok.
+		echo 'class="' . join( ' ', develope_get_main_class( $class ) ) . '"'; // phpcs:ignore Standard.Category.SniffName.ErrorCode.
 	}
 }
 
@@ -585,7 +585,7 @@ if ( ! function_exists( 'develope_footer_class' ) ) {
 	 */
 	function develope_footer_class( $class = '' ) {
 		// Separates classes with a single space, collates classes for post DIV
-		echo 'class="' . join( ' ', develope_get_footer_class( $class ) ) . '"'; // WPCS: XSS ok, sanitization ok.
+		echo 'class="' . join( ' ', develope_get_footer_class( $class ) ) . '"'; // phpcs:ignore Standard.Category.SniffName.ErrorCode.
 	}
 }
 
@@ -638,7 +638,7 @@ if ( ! function_exists( 'develope_inside_footer_class' ) ) {
 		$return = apply_filters( 'develope_inside_footer_class', $classes, $class );
 
 		// Separates classes with a single space, collates classes for post DIV
-		echo 'class="' . join( ' ', $return ) . '"'; // WPCS: XSS ok, sanitization ok.
+		echo 'class="' . join( ' ', $return ) . '"'; // phpcs:ignore Standard.Category.SniffName.ErrorCode.
 	}
 }
 
@@ -665,7 +665,7 @@ if ( ! function_exists( 'develope_top_bar_class' ) ) {
 		$return = apply_filters( 'develope_top_bar_class', $classes, $class );
 
 		// Separates classes with a single space, collates classes for post DIV
-		echo 'class="' . join( ' ', $return ) . '"'; // WPCS: XSS ok, sanitization ok.
+		echo 'class="' . join( ' ', $return ) . '"'; // phpcs:ignore Standard.Category.SniffName.ErrorCode.
 	}
 }
 
@@ -692,7 +692,7 @@ if ( ! function_exists( 'develope_body_schema' ) ) {
 		$result = esc_html( apply_filters( 'develope_body_itemtype', $itemtype ) );
 
 		// Return our HTML
-		echo "itemtype='https://schema.org/$result' itemscope='itemscope'"; // WPCS: XSS ok, sanitization ok.
+		echo "itemtype='https://schema.org/$result' itemscope='itemscope'"; // phpcs:ignore Standard.Category.SniffName.ErrorCode.
 	}
 }
 
@@ -707,6 +707,6 @@ if ( ! function_exists( 'develope_article_schema' ) ) {
 		$itemtype = esc_html( apply_filters( 'develope_article_itemtype', $type ) );
 
 		// Print the results
-		echo "itemtype='https://schema.org/$itemtype' itemscope='itemscope'"; // WPCS: XSS ok, sanitization ok.
+		echo "itemtype='https://schema.org/$itemtype' itemscope='itemscope'"; // phpcs:ignore Standard.Category.SniffName.ErrorCode.
 	}
 }

@@ -36,7 +36,7 @@ get_header(); ?>
 				?>
 
 				<header class="entry-header">
-					<h1 class="entry-title" itemprop="headline"><?php echo apply_filters( 'develope_404_title', __( 'Oops! That page can&rsquo;t be found.', 'developress' ) ); // WPCS: XSS OK. ?></h1>
+					<h1 class="entry-title" itemprop="headline"><?php echo apply_filters( 'develope_404_title', __( 'Oops! That page can&rsquo;t be found.', 'developress' ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></h1>
 				</header><!-- .entry-header -->
 
 				<?php
@@ -52,7 +52,7 @@ get_header(); ?>
 
 				<div class="entry-content" itemprop="text">
 					<?php
-					echo '<p>' . apply_filters( 'develope_404_text', __( 'It looks like nothing was found at this location. Maybe try searching?', 'developress' ) ) . '</p>'; // WPCS: XSS OK.
+					echo '<p>' . apply_filters( 'develope_404_text', __( 'It looks like nothing was found at this location. Maybe try searching?', 'developress' ) ) . '</p>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 
 					get_search_form();
 					?>

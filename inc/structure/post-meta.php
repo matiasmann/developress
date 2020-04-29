@@ -157,7 +157,7 @@ function develope_do_post_meta_item( $item ) {
 		// If our date is enabled, show it.
 		if ( $date ) {
 			echo apply_filters( 'develope_post_date_output',
-				sprintf( // WPCS: XSS ok, sanitization ok.
+				sprintf( // phpcs:ignore Standard.Category.SniffName.ErrorCode.
 					'<span class="posted-on">%1$s<a href="%2$s" title="%3$s" rel="bookmark">%4$s</a></span> ',
 						apply_filters( 'develope_inside_post_meta_item_output', '', 'date' ),
 						esc_url( get_permalink() ),
@@ -193,7 +193,7 @@ function develope_do_post_meta_item( $item ) {
 
 		if ( $categories_list && $categories ) {
 			echo apply_filters( 'develope_category_list_output',
-				sprintf( '<span class="cat-links">%3$s<span class="screen-reader-text">%1$s </span>%2$s</span> ', // WPCS: XSS ok, sanitization ok.
+				sprintf( '<span class="cat-links">%3$s<span class="screen-reader-text">%1$s </span>%2$s</span> ', // phpcs:ignore Standard.Category.SniffName.ErrorCode.
 					esc_html_x( 'Categories', 'Used before category names.', 'developress' ),
 					$categories_list,
 					apply_filters( 'develope_inside_post_meta_item_output', '', 'categories' )
@@ -210,7 +210,7 @@ function develope_do_post_meta_item( $item ) {
 
 		if ( $tags_list && $tags ) {
 			echo apply_filters( 'develope_tag_list_output',
-				sprintf( '<span class="tags-links">%3$s<span class="screen-reader-text">%1$s </span>%2$s</span> ', // WPCS: XSS ok, sanitization ok.
+				sprintf( '<span class="tags-links">%3$s<span class="screen-reader-text">%1$s </span>%2$s</span> ', // phpcs:ignore Standard.Category.SniffName.ErrorCode.
 					esc_html_x( 'Tags', 'Used before tag names.', 'developress' ),
 					$tags_list,
 					apply_filters( 'develope_inside_post_meta_item_output', '', 'tags' )

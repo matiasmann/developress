@@ -26,7 +26,7 @@ get_header(); ?>
 				<header class="page-header">
 					<h1 class="page-title">
 						<?php
-						printf( // WPCS: XSS ok.
+						printf( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 							/* translators: 1: Search query name */
 							__( 'Search Results for: %s', 'developress' ),
 							'<span>' . get_search_query() . '</span>'

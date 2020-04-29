@@ -44,7 +44,7 @@ do_action( 'develope_before_comments' );
 		<h3 class="comments-title">
 			<?php
 			$comments_number = get_comments_number();
-			$comments_title = apply_filters( 'develope_comment_form_title', sprintf( // WPCS: XSS OK.
+			$comments_title = apply_filters( 'develope_comment_form_title', sprintf( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 				/* translators: 1: number of comments, 2: post title */
 				esc_html( _nx(
 					'%1$s thought on &ldquo;%2$s&rdquo;',
@@ -104,7 +104,7 @@ do_action( 'develope_before_comments' );
 
 	// If comments are closed and there are comments, let's leave a little note, shall we?
 	if ( ! comments_open() && '0' != get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) : ?>
-		<p class="no-comments"><?php _e( 'Comments are closed.', 'developress' ); // WPCS: XSS OK. ?></p>
+		<p class="no-comments"><?php  esc_html_e( 'Comments are closed.', 'developress' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
 	<?php endif;
 
 	comment_form();

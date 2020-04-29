@@ -23,8 +23,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 	 * wp_body_open hook.
 	 *
 	 * @since 2.3
+	 * https://make.wordpress.org/themes/2019/03/29/addition-of-new-wp_body_open-hook/#comment-43714
 	 */
-	do_action( 'wp_body_open' );
+	if ( function_exists( 'wp_body_open' ) ) {
+		wp_body_open();
+	}
 
 	/**
 	 * develope_before_header hook.

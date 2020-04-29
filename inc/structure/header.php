@@ -132,7 +132,7 @@ if ( ! function_exists( 'develope_construct_logo' ) ) {
 		}
 
 		// Print our HTML.
-		echo apply_filters( 'develope_logo_output', sprintf( // WPCS: XSS ok, sanitization ok.
+		echo apply_filters( 'develope_logo_output', sprintf( // phpcs:ignore Standard.Category.SniffName.ErrorCode.
 			'<div class="site-logo">
 				<a href="%1$s" title="%2$s" rel="home">
 					<img %3$s />
@@ -201,7 +201,7 @@ if ( ! function_exists( 'develope_construct_site_title' ) ) {
 				develope_construct_logo();
 			}
 
-			echo apply_filters( 'develope_site_branding_output', sprintf( // WPCS: XSS ok, sanitization ok.
+			echo apply_filters( 'develope_site_branding_output', sprintf( // phpcs:ignore Standard.Category.SniffName.ErrorCode.
 				'<div class="site-branding">
 					%1$s
 					%2$s
@@ -292,7 +292,7 @@ if ( ! function_exists( 'develope_add_viewport' ) ) {
 	 * @since 1.1.0
 	 */
 	function develope_add_viewport() {
-		echo apply_filters( 'develope_meta_viewport', '<meta name="viewport" content="width=device-width, initial-scale=1">' ); // WPCS: XSS ok.
+		echo apply_filters( 'develope_meta_viewport', '<meta name="viewport" content="width=device-width, initial-scale=1">' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	}
 }
 

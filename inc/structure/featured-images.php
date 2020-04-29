@@ -22,7 +22,7 @@ if ( ! function_exists( 'develope_post_image' ) ) {
 
 		// If we're not on any single post/page or the 404 template, we must be showing excerpts.
 		if ( ! is_singular() && ! is_404() ) {
-			echo apply_filters( 'develope_featured_image_output', sprintf( // WPCS: XSS ok.
+			echo apply_filters( 'develope_featured_image_output', sprintf( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 				'<div class="post-image">
 					%3$s
 					<a href="%1$s">
