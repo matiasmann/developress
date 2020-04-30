@@ -18,7 +18,7 @@ if ( ! function_exists( 'develope_base_css' ) ) {
 	function develope_base_css() {
 		$develope_settings = wp_parse_args(
 			get_option( 'develope_settings', array() ),
-			develope_get_defaults()
+			develope_get_general_defaults()
 		);
 
 		$css = new DeveloPress_CSS;
@@ -319,29 +319,29 @@ if ( ! function_exists( 'develope_font_css' ) ) {
 
 		$develope_settings = wp_parse_args(
 			get_option( 'develope_settings', array() ),
-			develope_get_default_fonts()
+			develope_get_font_defaults()
 		);
 
-		$og_defaults = develope_get_default_fonts( false );
+		$og_defaults = develope_get_font_defaults( false );
 
 		$css = new DeveloPress_CSS;
 
 		$subnav_font_size = $develope_settings['navigation_font_size'] >= 17 ? $develope_settings['navigation_font_size'] - 3 : $develope_settings['navigation_font_size'] - 1;
 
-		$body_family = develope_get_font_family_css( 'font_body', 'develope_settings', develope_get_default_fonts() );
-		$top_bar_family = develope_get_font_family_css( 'font_top_bar', 'develope_settings', develope_get_default_fonts() );
-		$site_title_family = develope_get_font_family_css( 'font_site_title', 'develope_settings', develope_get_default_fonts() );
-		$site_tagline_family = develope_get_font_family_css( 'font_site_tagline', 'develope_settings', develope_get_default_fonts() );
-		$navigation_family = develope_get_font_family_css( 'font_navigation', 'develope_settings', develope_get_default_fonts() );
-		$widget_family = develope_get_font_family_css( 'font_widget_title', 'develope_settings', develope_get_default_fonts() );
-		$h1_family = develope_get_font_family_css( 'font_heading_1', 'develope_settings', develope_get_default_fonts() );
-		$h2_family = develope_get_font_family_css( 'font_heading_2', 'develope_settings', develope_get_default_fonts() );
-		$h3_family = develope_get_font_family_css( 'font_heading_3', 'develope_settings', develope_get_default_fonts() );
-		$h4_family = develope_get_font_family_css( 'font_heading_4', 'develope_settings', develope_get_default_fonts() );
-		$h5_family = develope_get_font_family_css( 'font_heading_5', 'develope_settings', develope_get_default_fonts() );
-		$h6_family = develope_get_font_family_css( 'font_heading_6', 'develope_settings', develope_get_default_fonts() );
-		$footer_family = develope_get_font_family_css( 'font_footer', 'develope_settings', develope_get_default_fonts() );
-		$buttons_family = develope_get_font_family_css( 'font_buttons', 'develope_settings', develope_get_default_fonts() );
+		$body_family = develope_get_font_family_css( 'font_body', 'develope_settings', develope_get_font_defaults() );
+		$top_bar_family = develope_get_font_family_css( 'font_top_bar', 'develope_settings', develope_get_font_defaults() );
+		$site_title_family = develope_get_font_family_css( 'font_site_title', 'develope_settings', develope_get_font_defaults() );
+		$site_tagline_family = develope_get_font_family_css( 'font_site_tagline', 'develope_settings', develope_get_font_defaults() );
+		$navigation_family = develope_get_font_family_css( 'font_navigation', 'develope_settings', develope_get_font_defaults() );
+		$widget_family = develope_get_font_family_css( 'font_widget_title', 'develope_settings', develope_get_font_defaults() );
+		$h1_family = develope_get_font_family_css( 'font_heading_1', 'develope_settings', develope_get_font_defaults() );
+		$h2_family = develope_get_font_family_css( 'font_heading_2', 'develope_settings', develope_get_font_defaults() );
+		$h3_family = develope_get_font_family_css( 'font_heading_3', 'develope_settings', develope_get_font_defaults() );
+		$h4_family = develope_get_font_family_css( 'font_heading_4', 'develope_settings', develope_get_font_defaults() );
+		$h5_family = develope_get_font_family_css( 'font_heading_5', 'develope_settings', develope_get_font_defaults() );
+		$h6_family = develope_get_font_family_css( 'font_heading_6', 'develope_settings', develope_get_font_defaults() );
+		$footer_family = develope_get_font_family_css( 'font_footer', 'develope_settings', develope_get_font_defaults() );
+		$buttons_family = develope_get_font_family_css( 'font_buttons', 'develope_settings', develope_get_font_defaults() );
 
 		$css->set_selector( 'body, button, input, select, textarea' );
 		$css->add_property( 'font-family', $body_family );
@@ -502,10 +502,10 @@ if ( ! function_exists( 'develope_spacing_css' ) ) {
 	function develope_spacing_css() {
 		$spacing_settings = wp_parse_args(
 			get_option( 'develope_spacing_settings', array() ),
-			develope_spacing_get_defaults()
+			develope_get_spacing_defaults()
 		);
 
-		$og_defaults = develope_spacing_get_defaults( false );
+		$og_defaults = develope_get_spacing_defaults( false );
 		$sidebar_layout = develope_get_layout();
 
 		$css = new DeveloPress_CSS;
@@ -772,12 +772,12 @@ function develope_do_icon_css() {
 
 		$output = '@font-face {
 			font-family: "DeveloPress";
-			src:  url("' . $url . 'fonts/developress.eot");
-			src:  url("' . $url . 'fonts/developress.eot#iefix") format("embedded-opentype"),
-				  url("' . $url . 'fonts/developress.woff2") format("woff2"),
-				  url("' . $url . 'fonts/developress.woff") format("woff"),
-				  url("' . $url . 'fonts/developress.ttf") format("truetype"),
-				  url("' . $url . 'fonts/developress.svg#DeveloPress") format("svg");
+			src:  url("' . $url . 'assets/fonts/developress.eot");
+			src:  url("' . $url . 'assets/fonts/developress.eot#iefix") format("embedded-opentype"),
+				  url("' . $url . 'assets/fonts/developress.woff2") format("woff2"),
+				  url("' . $url . 'assets/fonts/developress.woff") format("woff"),
+				  url("' . $url . 'assets/fonts/developress.ttf") format("truetype"),
+				  url("' . $url . 'assets/fonts/developress.svg#DeveloPress") format("svg");
 			font-weight: normal;
 			font-style: normal;
 		}';

@@ -1,7 +1,13 @@
 <?php
 /**
- * Sets all of our theme defaults.
- *
+ * Sets all of the theme defaults.
+ * 
+ * Color default options.
+ * Font default options.
+ * General default options.
+ * Spacing default options
+ * System Fonts default options
+ * 
  * @package DeveloPress
  */
 
@@ -9,89 +15,39 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-if ( ! function_exists( 'develope_get_defaults' ) ) {
-	/**
-	 * Set default options
-	 *
-	 * @since 0.1
-	 */
-	function develope_get_defaults() {
-		return apply_filters( 'develope_option_defaults',
-			array(
-				'hide_title' => '',
-				'hide_tagline' => '',
-				'logo' => '',
-				'inline_logo_site_branding' => false,
-				'retina_logo' => '',
-				'logo_width' => '',
-				'top_bar_width' => 'full',
-				'top_bar_inner_width' => 'contained',
-				'top_bar_alignment' => 'right',
-				'container_width' => '1100',
-				'container_alignment' => 'boxes',
-				'header_layout_setting' => 'fluid-header',
-				'header_inner_width' => 'contained',
-				'nav_alignment_setting' => ( is_rtl() ) ? 'right' : 'left',
-				'header_alignment_setting' => ( is_rtl() ) ? 'right' : 'left',
-				'nav_layout_setting' => 'fluid-nav',
-				'nav_inner_width' => 'contained',
-				'nav_position_setting' => 'nav-below-header',
-				'nav_drop_point' => '',
-				'nav_dropdown_type' => 'hover',
-				'nav_dropdown_direction' => 'right',
-				'nav_search' => 'disable',
-				'content_layout_setting' => 'separate-containers',
-				'layout_setting' => 'right-sidebar',
-				'blog_layout_setting' => 'right-sidebar',
-				'single_layout_setting' => 'right-sidebar',
-				'post_content' => 'excerpt',
-				'footer_layout_setting' => 'fluid-footer',
-				'footer_inner_width' => 'contained',
-				'footer_widget_setting' => '3',
-				'footer_bar_alignment' => 'right',
-				'back_to_top' => '',
-				'background_color' => '#efefef',
-				'text_color' => '#3a3a3a',
-				'link_color' => '#1e73be',
-				'link_color_hover' => '#000000',
-				'link_color_visited' => '',
-				'font_awesome_essentials' => true,
-				'icons' => 'font',
-				'combine_css' => false,
-				'dynamic_css_cache' => true,
-			)
-		);
-	}
-}
-
 if ( ! function_exists( 'develope_get_color_defaults' ) ) {
 	/**
-	 * Set default options
+	 * Set Color default options.
+	 *
+	 * @since 0.1
+	 *
+	 * @param bool $filter Whether to return the filtered values or original values.
+	 * @return array Option defaults.
 	 */
 	function develope_get_color_defaults() {
 		return apply_filters( 'develope_color_option_defaults',
 			array(
-				'top_bar_background_color' => '#636363',
-				'top_bar_text_color' => '#ffffff',
-				'top_bar_link_color' => '#ffffff',
-				'top_bar_link_color_hover' => '#303030',
-				'header_background_color' => '#ffffff',
-				'header_text_color' => '#3a3a3a',
-				'header_link_color' => '#3a3a3a',
+				'top_bar_background_color' => '#f7f7f7;',
+				'top_bar_text_color' => '#0073aa',
+				'top_bar_link_color' => '#0073aa',
+				'top_bar_link_color_hover' => '#00a0d2',
+				'header_background_color' => '#00a0d2',
+				'header_text_color' => '#ffffff',
+				'header_link_color' => '#ffffff',
 				'header_link_hover_color' => '',
-				'site_title_color' => '#222222',
-				'site_tagline_color' => '#757575',
-				'navigation_background_color' => '#222222',
+				'site_title_color' => '#ffffff',
+				'site_tagline_color' => '#ffffff',
+				'navigation_background_color' => '#0073aa',
 				'navigation_text_color' => '#ffffff',
-				'navigation_background_hover_color' => '#3f3f3f',
+				'navigation_background_hover_color' => '#32373c',
 				'navigation_text_hover_color' => '#ffffff',
-				'navigation_background_current_color' => '#3f3f3f',
+				'navigation_background_current_color' => '#32373c',
 				'navigation_text_current_color' => '#ffffff',
-				'subnavigation_background_color' => '#3f3f3f',
+				'subnavigation_background_color' => '#191e23',
 				'subnavigation_text_color' => '#ffffff',
-				'subnavigation_background_hover_color' => '#4f4f4f',
+				'subnavigation_background_hover_color' => '#32373c',
 				'subnavigation_text_hover_color' => '#ffffff',
-				'subnavigation_background_current_color' => '#4f4f4f',
+				'subnavigation_background_current_color' => '#32373c',
 				'subnavigation_text_current_color' => '#ffffff',
 				'navigation_search_background_color' => '',
 				'navigation_search_text_color' => '',
@@ -102,9 +58,9 @@ if ( ! function_exists( 'develope_get_color_defaults' ) ) {
 				'content_title_color' => '',
 				'blog_post_title_color' => '',
 				'blog_post_title_hover_color' => '',
-				'entry_meta_text_color' => '#595959',
-				'entry_meta_link_color' => '#595959',
-				'entry_meta_link_color_hover' => '#1e73be',
+				'entry_meta_text_color' => '#23282d',
+				'entry_meta_link_color' => '#23282d',
+				'entry_meta_link_color_hover' => '#32373c',
 				'h1_color' => '',
 				'h2_color' => '',
 				'h3_color' => '',
@@ -116,15 +72,15 @@ if ( ! function_exists( 'develope_get_color_defaults' ) ) {
 				'sidebar_widget_link_color' => '',
 				'sidebar_widget_link_hover_color' => '',
 				'sidebar_widget_title_color' => '#000000',
-				'footer_widget_background_color' => '#ffffff',
+				'footer_widget_background_color' => 'linear-gradient(to right, #fafafa 40%, #fff 40%)',
 				'footer_widget_text_color' => '',
 				'footer_widget_link_color' => '',
 				'footer_widget_link_hover_color' => '',
 				'footer_widget_title_color' => '#000000',
-				'footer_background_color' => '#222222',
-				'footer_text_color' => '#ffffff',
-				'footer_link_color' => '#ffffff',
-				'footer_link_hover_color' => '#606060',
+				'footer_background_color' => '#f7f7f7;',
+				'footer_text_color' => '#0073aa',
+				'footer_link_color' => '#0073aa',
+				'footer_link_hover_color' => '#00a0d2',
 				'form_background_color' => '#fafafa',
 				'form_text_color' => '#666666',
 				'form_background_color_focus' => '#ffffff',
@@ -144,16 +100,16 @@ if ( ! function_exists( 'develope_get_color_defaults' ) ) {
 	}
 }
 
-if ( ! function_exists( 'develope_get_default_fonts' ) ) {
+if ( ! function_exists( 'develope_get_font_defaults' ) ) {
 	/**
-	 * Set default options.
+	 * Set Font default options.
 	 *
 	 * @since 0.1
 	 *
 	 * @param bool $filter Whether to return the filtered values or original values.
 	 * @return array Option defaults.
 	 */
-	function develope_get_default_fonts( $filter = true ) {
+	function develope_get_font_defaults( $filter = true ) {
 		$defaults = array(
 			'font_body' => 'System Stack',
 			'font_body_category' => '',
@@ -174,20 +130,20 @@ if ( ! function_exists( 'develope_get_default_fonts' ) ) {
 			'font_site_title_variants' => '',
 			'site_title_font_weight' => 'bold',
 			'site_title_font_transform' => 'none',
-			'site_title_font_size' => '45',
+			'site_title_font_size' => '50',
 			'mobile_site_title_font_size' => '30',
 			'font_site_tagline' => 'inherit',
 			'font_site_tagline_category' => '',
 			'font_site_tagline_variants' => '',
 			'site_tagline_font_weight' => 'normal',
 			'site_tagline_font_transform' => 'none',
-			'site_tagline_font_size' => '15',
+			'site_tagline_font_size' => '20',
 			'font_navigation' => 'inherit',
 			'font_navigation_category' => '',
 			'font_navigation_variants' => '',
-			'navigation_font_weight' => 'normal',
+			'navigation_font_weight' => '600',
 			'navigation_font_transform' => 'none',
-			'navigation_font_size' => '15',
+			'navigation_font_size' => '16',
 			'font_widget_title' => 'inherit',
 			'font_widget_title_category' => '',
 			'font_widget_title_variants' => '',
@@ -265,16 +221,74 @@ if ( ! function_exists( 'develope_get_default_fonts' ) ) {
 	}
 }
 
-if ( ! function_exists( 'develope_spacing_get_defaults' ) ) {
+if ( ! function_exists( 'develope_get_general_defaults' ) ) {
 	/**
-	 * Set the default options.
-	 *
-	 * @since 0.1
+	 * Set General default options
 	 *
 	 * @param bool $filter Whether to return the filtered values or original values.
 	 * @return array Option defaults.
+	 * 
+	 * @since 0.1
 	 */
-	function develope_spacing_get_defaults( $filter = true ) {
+	function develope_get_general_defaults() {
+		return apply_filters( 'develope_option_defaults',
+			array(
+				'hide_title' => '',
+				'hide_tagline' => '',
+				'logo' => '',
+				'inline_logo_site_branding' => false,
+				'retina_logo' => '',
+				'logo_width' => '',
+				'top_bar_width' => 'full',
+				'top_bar_inner_width' => 'contained',
+				'top_bar_alignment' => 'right',
+				'container_width' => '960',
+				'container_alignment' => 'boxes',
+				'header_layout_setting' => 'fluid-header',
+				'header_inner_width' => 'contained',
+				'nav_alignment_setting' => ( is_rtl() ) ? 'right' : 'left',
+				'header_alignment_setting' => ( is_rtl() ) ? 'right' : 'left',
+				'nav_layout_setting' => 'fluid-nav',
+				'nav_inner_width' => 'contained',
+				'nav_position_setting' => 'nav-below-header',
+				'nav_drop_point' => '',
+				'nav_dropdown_type' => 'hover',
+				'nav_dropdown_direction' => 'right',
+				'nav_search' => 'disable',
+				'content_layout_setting' => 'one-container',
+				'layout_setting' => 'left-sidebar',
+				'blog_layout_setting' => 'left-sidebar',
+				'single_layout_setting' => 'left-sidebar',
+				'post_content' => 'excerpt',
+				'footer_layout_setting' => 'fluid-footer',
+				'footer_inner_width' => 'contained',
+				'footer_widget_setting' => '3',
+				'footer_bar_alignment' => 'right',
+				'back_to_top' => '',
+				'background_color' => '#efefef',
+				'text_color' => '#3a3a3a',
+				'link_color' => '#1e73be',
+				'link_color_hover' => '#000000',
+				'link_color_visited' => '',
+				'font_awesome_essentials' => true,
+				'icons' => 'font',
+				'combine_css' => false,
+				'dynamic_css_cache' => true,
+			)
+		);
+	}
+}
+
+if ( ! function_exists( 'develope_get_spacing_defaults' ) ) {
+	/**
+	 * Set Spacing default options
+	 *
+	 * @param bool $filter Whether to return the filtered values or original values.
+	 * @return array Option defaults.
+	 * 
+	 * @since 0.1
+	 */
+	function develope_get_spacing_defaults( $filter = true ) {
 		$defaults = array(
 			'top_bar_top' => '10',
 			'top_bar_right' => '10',
@@ -323,13 +337,16 @@ if ( ! function_exists( 'develope_spacing_get_defaults' ) ) {
 	}
 }
 
-if ( ! function_exists( 'develope_typography_default_fonts' ) ) {
+if ( ! function_exists( 'develope_get_typography_fonts_default' ) ) {
 	/**
-	 * Set the default system fonts.
+	 * Set System Fonts default options
 	 *
-	 * @since 1.3.40
+	 * @param bool $filter Whether to return the filtered values or original values.
+	 * @return array Option defaults.
+	 * 
+	 * @since 1.3.4
 	 */
-	function develope_typography_default_fonts() {
+	function develope_get_typography_fonts_default() {
 		$fonts = array(
 			'inherit',
 			'System Stack',
@@ -349,6 +366,6 @@ if ( ! function_exists( 'develope_typography_default_fonts' ) ) {
 			'Verdana, Geneva, sans-serif',
 		);
 
-		return apply_filters( 'develope_typography_default_fonts', $fonts );
+		return apply_filters( 'develope_get_typography_fonts_default', $fonts );
 	}
 }

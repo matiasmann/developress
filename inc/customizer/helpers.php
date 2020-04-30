@@ -272,10 +272,10 @@ function develope_do_control_inline_scripts() {
 		)
 	);
 
-	wp_localize_script( 'developress-typography-customizer', 'typography_defaults', develope_typography_default_fonts() );
+	wp_localize_script( 'developress-typography-customizer', 'typography_defaults', develope_get_typography_fonts_default() );
 
 	wp_enqueue_script( 'developress-customizer-controls', trailingslashit( get_template_directory_uri() ) . 'inc/customizer/controls/js/customizer-controls.js', array( 'customize-controls', 'jquery' ), DEVELOPE_VERSION, true );
-	wp_localize_script( 'developress-customizer-controls', 'developress_defaults', develope_get_defaults() );
+	wp_localize_script( 'developress-customizer-controls', 'developress_defaults', develope_get_general_defaults() );
 	wp_localize_script( 'developress-customizer-controls', 'developress_color_defaults', develope_get_color_defaults() );
 }
 
@@ -289,7 +289,7 @@ if ( ! function_exists( 'develope_customizer_live_preview' ) ) {
 	function develope_customizer_live_preview() {
 		$spacing_settings = wp_parse_args(
 			get_option( 'develope_spacing_settings', array() ),
-			develope_spacing_get_defaults()
+			develope_get_spacing_defaults()
 		);
 
 		wp_enqueue_script( 'develope-themecustomizer', trailingslashit( get_template_directory_uri() ) . 'inc/customizer/controls/js/customizer-live-preview.js', array( 'customize-preview' ), DEVELOPE_VERSION, true );

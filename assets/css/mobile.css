@@ -30,7 +30,6 @@ button.menu-toggle:focus {
 .menu-toggle:before {
 	content: "\f0c9";
 	font-family: DeveloPress;
-
 	width: 1.28571429em;
 	text-align: center;
 	display: inline-block;

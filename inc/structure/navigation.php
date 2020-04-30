@@ -94,7 +94,7 @@ if ( ! function_exists( 'develope_menu_fallback' ) ) {
 	function develope_menu_fallback( $args ) {
 		$develope_settings = wp_parse_args(
 			get_option( 'develope_settings', array() ),
-			develope_get_defaults()
+			develope_get_general_defaults()
 		);
 		?>
 		<div id="primary-menu" class="main-nav">
@@ -276,7 +276,7 @@ if ( ! function_exists( 'develope_navigation_search' ) ) {
 	function develope_navigation_search() {
 		$develope_settings = wp_parse_args(
 			get_option( 'develope_settings', array() ),
-			develope_get_defaults()
+			develope_get_general_defaults()
 		);
 
 		if ( 'enable' !== $develope_settings['nav_search'] ) {
@@ -308,7 +308,7 @@ if ( ! function_exists( 'develope_menu_search_icon' ) ) {
 	function develope_menu_search_icon( $nav, $args ) {
 		$develope_settings = wp_parse_args(
 			get_option( 'develope_settings', array() ),
-			develope_get_defaults()
+			develope_get_general_defaults()
 		);
 
 		// If the search icon isn't enabled, return the regular nav.
@@ -342,7 +342,7 @@ if ( ! function_exists( 'develope_mobile_menu_search_icon' ) ) {
 	function develope_mobile_menu_search_icon() {
 		$develope_settings = wp_parse_args(
 			get_option( 'develope_settings', array() ),
-			develope_get_defaults()
+			develope_get_general_defaults()
 		);
 
 		// If the search icon isn't enabled, return the regular nav.

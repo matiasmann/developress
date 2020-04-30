@@ -29,7 +29,7 @@ if ( ! function_exists( 'develope_options_styles' ) ) {
 	 * @since 0.1
 	 */
 	function develope_options_styles() {
-		wp_enqueue_style( 'develope-options', get_template_directory_uri() . '/css/admin/style.css', array(), DEVELOPE_VERSION );
+		wp_enqueue_style( 'develope-options', get_template_directory_uri() . '/assets/css/admin/style.css', array(), DEVELOPE_VERSION );
 	}
 }
 

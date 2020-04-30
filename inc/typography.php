@@ -25,11 +25,11 @@ if ( ! function_exists( 'develope_enqueue_google_fonts' ) ) {
 		// Grab our options
 		$develope_settings = wp_parse_args(
 			get_option( 'develope_settings', array() ),
-			develope_get_default_fonts()
+			develope_get_font_defaults()
 		);
 
 		// List our non-Google fonts
-		$not_google = str_replace( ' ', '+', develope_typography_default_fonts() );
+		$not_google = str_replace( ' ', '+', develope_get_typography_fonts_default() );
 
 		// Grab our font family settings
 		$font_settings = array(
@@ -134,7 +134,7 @@ if ( ! function_exists( 'develope_default_fonts_customize_register' ) ) {
 		// Load helpers
 		require_once trailingslashit( get_template_directory() ) . 'inc/customizer/customizer-helpers.php';
 
-		$defaults = develope_get_default_fonts();
+		$defaults = develope_get_font_defaults();
 
 		if ( method_exists( $wp_customize,'register_control_type' ) ) {
 			$wp_customize->register_control_type( 'Develope_Typography_Customize_Control' );
@@ -846,7 +846,7 @@ if ( ! function_exists( 'develope_get_google_font_variants' ) ) {
 	 */
 	function develope_get_google_font_variants( $font, $key = '' ) {
 		// Don't need variants if we're using a system font
-		if ( in_array( $font, develope_typography_default_fonts() ) ) {
+		if ( in_array( $font, develope_get_typography_fonts_default() ) ) {
 			return;
 		}
 
@@ -856,7 +856,7 @@ if ( ! function_exists( 'develope_get_google_font_variants' ) ) {
 		}
 
 		// Get our defaults
-		$defaults = develope_get_default_fonts();
+		$defaults = develope_get_font_defaults();
 
 		// If our default font is selected and the category isn't saved, we already know the category
 		if ( $defaults[ $key ] == $font ) {
@@ -902,7 +902,7 @@ if ( ! function_exists( 'develope_get_google_font_category' ) ) {
 	 */
 	function develope_get_google_font_category( $font, $key = '' ) {
 		// Don't need a category if we're using a system font
-		if ( in_array( $font, develope_typography_default_fonts() ) ) {
+		if ( in_array( $font, develope_get_typography_fonts_default() ) ) {
 			return;
 		}
 
@@ -912,7 +912,7 @@ if ( ! function_exists( 'develope_get_google_font_category' ) ) {
 		}
 
 		// Get our defaults
-		$defaults = develope_get_default_fonts();
+		$defaults = develope_get_font_defaults();
 
 		// If our default font is selected and the category isn't saved, we already know the category
 		if ( $defaults[ $key ] == $font ) {
@@ -1011,13 +1011,13 @@ if ( ! function_exists( 'develope_add_to_font_customizer_list' ) ) {
 	 */
 	function develope_add_to_font_customizer_list( $fonts ) {
 		// Bail if we don't have our defaults
-		if ( ! function_exists( 'develope_get_default_fonts' ) ) {
+		if ( ! function_exists( 'develope_get_font_defaults' ) ) {
 			return;
 		}
 
 		$develope_settings = wp_parse_args(
 			get_option( 'develope_settings', array() ),
-			develope_get_default_fonts()
+			develope_get_font_defaults()
 		);
 
 		$font_settings = array(
@@ -1043,7 +1043,7 @@ if ( ! function_exists( 'develope_add_to_font_customizer_list' ) ) {
 
 			$id = strtolower( str_replace( ' ', '_', $develope_settings[ $setting ] ) );
 
-			if ( array_key_exists( $id, $select_fonts ) || in_array( $develope_settings[ $setting ], develope_typography_default_fonts() ) ) {
+			if ( array_key_exists( $id, $select_fonts ) || in_array( $develope_settings[ $setting ], develope_get_typography_fonts_default() ) ) {
 				continue;
 			}
 
@@ -1062,7 +1062,7 @@ if ( ! function_exists( 'develope_add_to_font_customizer_list' ) ) {
 
 			$secondary_nav_id = strtolower( str_replace( ' ', '_', $secondary_nav_settings['font_secondary_navigation'] ) );
 
-			if ( ! array_key_exists( $secondary_nav_id, $select_fonts ) && ! in_array( $secondary_nav_settings['font_secondary_navigation'], develope_typography_default_fonts() ) ) {
+			if ( ! array_key_exists( $secondary_nav_id, $select_fonts ) && ! in_array( $secondary_nav_settings['font_secondary_navigation'], develope_get_typography_fonts_default() ) ) {
 				$fonts[ strtolower( str_replace( ' ', '_', $secondary_nav_settings['font_secondary_navigation'] ) ) ] = array(
 					'name' => $secondary_nav_settings['font_secondary_navigation'],
 					'variants' => array_key_exists( $secondary_nav_id, $all_fonts ) ? $all_fonts[ $secondary_nav_id ]['variants'] : array(),

@@ -18,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @return string The option value.
  */
 function develope_get_option( $option ) {
-	$defaults = develope_get_defaults();
+	$defaults = develope_get_general_defaults();
 
 	if ( ! isset( $defaults[ $option ] ) ) {
 		return;

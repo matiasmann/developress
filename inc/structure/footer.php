@@ -78,9 +78,9 @@ if ( ! function_exists( 'develope_add_footer_info' ) ) {
 		$copyright = sprintf( '<span class="copyright">&copy; %1$s %2$s</span> &bull; %4$s <a href="%3$s" itemprop="url">%5$s</a>',
 			date( 'Y' ),
 			get_bloginfo( 'name' ),
-			esc_url( 'https://developress.org' ),
-			_x( 'Powered by', 'DeveloPress', 'developress' ),
-			__( 'DeveloPress', 'developress' )
+			esc_url( 'https://wordpress.org' ),
+			_x( 'Powered by', 'WordPress', 'developress' ),
+			__( 'WordPress', 'developress' )
 		);
 
 		echo apply_filters( 'develope_copyright', $copyright ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
@@ -201,7 +201,7 @@ if ( ! function_exists( 'develope_back_to_top' ) ) {
 	function develope_back_to_top() {
 		$develope_settings = wp_parse_args(
 			get_option( 'develope_settings', array() ),
-			develope_get_defaults()
+			develope_get_general_defaults()
 		);
 
 		if ( 'enable' !== $develope_settings['back_to_top'] ) {

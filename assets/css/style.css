@@ -610,6 +610,7 @@ a:focus {
 }
 
 .main-navigation .main-nav ul li a {
+	font-weight: 600;
 	padding-left: 20px;
 	padding-right: 20px;
 	line-height: 60px;

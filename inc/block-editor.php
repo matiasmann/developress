@@ -117,7 +117,7 @@ function develope_enqueue_backend_block_editor_assets() {
 
 	$spacing_settings = wp_parse_args(
 		get_option( 'develope_spacing_settings', array() ),
-		develope_spacing_get_defaults()
+		develope_get_spacing_defaults()
 	);
 
 	$text_color = develope_get_option( 'text_color' );
@@ -154,7 +154,7 @@ function develope_do_inline_block_editor_css() {
 
 	$font_settings = wp_parse_args(
 		get_option( 'develope_settings', array() ),
-		develope_get_default_fonts()
+		develope_get_font_defaults()
 	);
 
 	$css = new DeveloPress_CSS;
@@ -163,7 +163,7 @@ function develope_do_inline_block_editor_css() {
 
 	$spacing_settings = wp_parse_args(
 		get_option( 'develope_spacing_settings', array() ),
-		develope_spacing_get_defaults()
+		develope_get_spacing_defaults()
 	);
 
 	$content_width_calc = sprintf(
@@ -203,14 +203,14 @@ function develope_do_inline_block_editor_css() {
 	$css->add_property( 'color', esc_attr( $color_settings['form_button_text_color_hover'] ) );
 	$css->add_property( 'background-color', esc_attr( $color_settings['form_button_background_color_hover'] ) );
 
-	$body_family = develope_get_font_family_css( 'font_body', 'develope_settings', develope_get_default_fonts() );
-	$h1_family = develope_get_font_family_css( 'font_heading_1', 'develope_settings', develope_get_default_fonts() );
-	$h2_family = develope_get_font_family_css( 'font_heading_2', 'develope_settings', develope_get_default_fonts() );
-	$h3_family = develope_get_font_family_css( 'font_heading_3', 'develope_settings', develope_get_default_fonts() );
-	$h4_family = develope_get_font_family_css( 'font_heading_4', 'develope_settings', develope_get_default_fonts() );
-	$h5_family = develope_get_font_family_css( 'font_heading_5', 'develope_settings', develope_get_default_fonts() );
-	$h6_family = develope_get_font_family_css( 'font_heading_6', 'develope_settings', develope_get_default_fonts() );
-	$buttons_family = develope_get_font_family_css( 'font_buttons', 'develope_settings', develope_get_default_fonts() );
+	$body_family = develope_get_font_family_css( 'font_body', 'develope_settings', develope_get_font_defaults() );
+	$h1_family = develope_get_font_family_css( 'font_heading_1', 'develope_settings', develope_get_font_defaults() );
+	$h2_family = develope_get_font_family_css( 'font_heading_2', 'develope_settings', develope_get_font_defaults() );
+	$h3_family = develope_get_font_family_css( 'font_heading_3', 'develope_settings', develope_get_font_defaults() );
+	$h4_family = develope_get_font_family_css( 'font_heading_4', 'develope_settings', develope_get_font_defaults() );
+	$h5_family = develope_get_font_family_css( 'font_heading_5', 'develope_settings', develope_get_font_defaults() );
+	$h6_family = develope_get_font_family_css( 'font_heading_6', 'develope_settings', develope_get_font_defaults() );
+	$buttons_family = develope_get_font_family_css( 'font_buttons', 'develope_settings', develope_get_font_defaults() );
 
 	$css->set_selector( 'body.gutenberg-editor-page .block-editor-block-list__block, body .editor-styles-wrapper' );
 	$css->add_property( 'font-family', $body_family );

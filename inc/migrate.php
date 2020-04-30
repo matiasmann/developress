@@ -71,7 +71,7 @@ if ( ! function_exists( 'develope_update_logo_setting' ) ) {
 		// Get our settings.
 		$develope_settings = wp_parse_args(
 			get_option( 'develope_settings', array() ),
-			develope_get_defaults()
+			develope_get_general_defaults()
 		);
 
 		// Get the old logo value.
@@ -122,7 +122,7 @@ if ( ! function_exists( 'develope_typography_convert_values' ) ) {
 		// Get all settings
 		$develope_settings = wp_parse_args(
 			get_option( 'develope_settings', array() ),
-			develope_get_default_fonts()
+			develope_get_font_defaults()
 		);
 
 		// Get our body font family setting
@@ -165,7 +165,7 @@ if ( ! function_exists( 'develope_typography_set_font_data' ) ) {
 	 */
 	function develope_typography_set_font_data() {
 		// Get our defaults
-		$defaults = develope_get_default_fonts();
+		$defaults = develope_get_font_defaults();
 
 		// Get our settings
 		$develope_settings = wp_parse_args(
@@ -179,7 +179,7 @@ if ( ! function_exists( 'develope_typography_set_font_data' ) ) {
 		}
 
 		// Don't need to continue if we're using a system font or our default font
-		if ( in_array( $develope_settings['font_body'], develope_typography_default_fonts() ) ) {
+		if ( in_array( $develope_settings['font_body'], develope_get_typography_fonts_default() ) ) {
 			return;
 		}
 
@@ -252,7 +252,7 @@ function develope_migrate_existing_settings() {
 	// Existing settings with defaults.
 	$settings = wp_parse_args(
 		get_option( 'develope_settings', array() ),
-		develope_get_defaults()
+		develope_get_general_defaults()
 	);
 
 	// Empty arrays to add data to.

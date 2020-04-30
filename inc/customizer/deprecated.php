@@ -27,7 +27,7 @@ if ( ! function_exists( 'develope_sanitize_typography' ) ) {
 		}
 
 		// Get all non-Google font names
-		$not_google = develope_typography_default_fonts();
+		$not_google = develope_get_typography_fonts_default();
 
 		// Merge them both into one array
 		$valid = array_merge( $font_names, $not_google );

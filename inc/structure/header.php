@@ -161,7 +161,7 @@ if ( ! function_exists( 'develope_construct_site_title' ) ) {
 	function develope_construct_site_title() {
 		$develope_settings = wp_parse_args(
 			get_option( 'develope_settings', array() ),
-			develope_get_defaults()
+			develope_get_general_defaults()
 		);
 
 		// Get the title and tagline.

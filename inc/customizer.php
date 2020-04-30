@@ -28,7 +28,7 @@ if ( ! function_exists( 'develope_customize_register' ) ) {
 	 * @param WP_Customize_Manager $wp_customize Theme Customizer object.
 	 */
 	function develope_customize_register( $wp_customize ) {
-		$defaults = develope_get_defaults();
+		$defaults = develope_get_general_defaults();
 
 		require_once trailingslashit( get_template_directory() ) . 'inc/customizer/customizer-helpers.php';
 
