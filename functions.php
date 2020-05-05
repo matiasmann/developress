@@ -11,8 +11,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-// Set our theme version.
-define( 'DEVELOPE_VERSION', '2.0.6' );
+// Set theme version.
+define( 'DEVELOPE_VERSION', '2.0.10' );
 
 if ( ! function_exists( 'develope_setup' ) ) {
 	add_action( 'after_setup_theme', 'develope_setup' );
@@ -63,36 +63,74 @@ if ( ! function_exists( 'develope_setup' ) ) {
 }
 
 /**
- * Get all necessary theme files
+ * Load theme files
+ * 
+ * @since 2.0.6
  */
 $develope_theme_dir = get_template_directory();
-
 require $develope_theme_dir . '/inc/theme-functions.php';
-require $develope_theme_dir . '/inc/defaults.php';
 require $develope_theme_dir . '/inc/class-css.php';
 require $develope_theme_dir . '/inc/css-output.php';
-require $develope_theme_dir . '/inc/general.php';
 require $develope_theme_dir . '/inc/customizer.php';
+require $develope_theme_dir . '/inc/deprecated.php';
+require $develope_theme_dir . '/inc/general.php';
 require $develope_theme_dir . '/inc/markup.php';
 require $develope_theme_dir . '/inc/typography.php';
-require $develope_theme_dir . '/inc/plugin-compat.php';
-require $develope_theme_dir . '/inc/block-editor.php';
 require $develope_theme_dir . '/inc/migrate.php';
-require $develope_theme_dir . '/inc/deprecated.php';
-
-if ( is_admin() ) {
-	require $develope_theme_dir . '/inc/meta-box.php';
-	require $develope_theme_dir . '/inc/dashboard.php';
-}
 
 /**
- * Load our theme structure
+ *  Load theme defaults options so we make sure everything looks good
+ * 
+ * @since 2.0.6
  */
-require $develope_theme_dir . '/inc/structure/archives.php';
-require $develope_theme_dir . '/inc/structure/comments.php';
-require $develope_theme_dir . '/inc/structure/featured-images.php';
-require $develope_theme_dir . '/inc/structure/footer.php';
-require $develope_theme_dir . '/inc/structure/header.php';
-require $develope_theme_dir . '/inc/structure/navigation.php';
-require $develope_theme_dir . '/inc/structure/post-meta.php';
-require $develope_theme_dir . '/inc/structure/sidebars.php';
+require $develope_theme_dir . '/inc/theme-defaults.php';
+
+/**
+ * Add Compatibilty with third party plugins
+ * WooCommerce
+ * bbPress
+ * BuddyPress
+ * 
+ * @since 2.0.6
+ * 
+ */
+
+require $develope_theme_dir . '/inc/plugin-compat/compat-buddybbpress.php';
+require $develope_theme_dir . '/inc/plugin-compat/compat-woocommerce.php';
+
+
+/**
+ * Load DeveloPress theme common elements
+ * 
+ * Archives
+ * Comments
+ * Featured Images
+ * Footer
+ * Header
+ * Navigation
+ * Post Meta
+ * Sidebars
+ * 
+ * @since 2.0.6
+ */
+require $develope_theme_dir . '/inc/elements/archives.php';
+require $develope_theme_dir . '/inc/elements/comments.php';
+require $develope_theme_dir . '/inc/elements/featured-images.php';
+require $develope_theme_dir . '/inc/elements/footer.php';
+require $develope_theme_dir . '/inc/elements/header.php';
+require $develope_theme_dir . '/inc/elements/navigation.php';
+require $develope_theme_dir . '/inc/elements/post-meta.php';
+require $develope_theme_dir . '/inc/elements/sidebars.php';
+
+
+/**
+ * Load Admin Metaboxes and DeveloPress Dashboard
+ * 
+ * @since 2.0.6
+ */
+
+if ( is_admin() ) {
+	require $develope_theme_dir . '/inc/admin/block-editor.php';
+	require $develope_theme_dir . '/inc/admin/meta-box.php';
+	require $develope_theme_dir . '/inc/admin/dashboard.php';
+}

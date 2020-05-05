@@ -1,8 +1,11 @@
 <?php
 /**
- * Featured image elements.
+ * Featured Images element
+ * Builds the Featured Image content
  *
  * @package DeveloPress
+ * 
+ * @since 2.0.6
  */
 
 if ( ! defined( 'ABSPATH' ) ) {

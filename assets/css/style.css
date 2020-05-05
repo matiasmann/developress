@@ -695,7 +695,7 @@ li.search-item.active {
 	opacity: 1;
 }
 
-.gen-sidebar-nav .navigation-search {
+.dev-sidebar-nav .navigation-search {
 	top: auto;
 	bottom: 0;
 }
@@ -1820,7 +1820,7 @@ ol.comment-list {
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
-	justify-content: space-around;
+	justify-content: space-between;
 }
 
 .inside-footer-widgets > div {

@@ -29,7 +29,7 @@ if ( ! function_exists( 'develope_enqueue_google_fonts' ) ) {
 		);
 
 		// List our non-Google fonts
-		$not_google = str_replace( ' ', '+', develope_get_typography_fonts_default() );
+		$not_google = str_replace( ' ', '+', develope_get_system_font_default() );
 
 		// Grab our font family settings
 		$font_settings = array(
@@ -846,7 +846,7 @@ if ( ! function_exists( 'develope_get_google_font_variants' ) ) {
 	 */
 	function develope_get_google_font_variants( $font, $key = '' ) {
 		// Don't need variants if we're using a system font
-		if ( in_array( $font, develope_get_typography_fonts_default() ) ) {
+		if ( in_array( $font, develope_get_system_font_default() ) ) {
 			return;
 		}
 
@@ -902,7 +902,7 @@ if ( ! function_exists( 'develope_get_google_font_category' ) ) {
 	 */
 	function develope_get_google_font_category( $font, $key = '' ) {
 		// Don't need a category if we're using a system font
-		if ( in_array( $font, develope_get_typography_fonts_default() ) ) {
+		if ( in_array( $font, develope_get_system_font_default() ) ) {
 			return;
 		}
 
@@ -1043,7 +1043,7 @@ if ( ! function_exists( 'develope_add_to_font_customizer_list' ) ) {
 
 			$id = strtolower( str_replace( ' ', '_', $develope_settings[ $setting ] ) );
 
-			if ( array_key_exists( $id, $select_fonts ) || in_array( $develope_settings[ $setting ], develope_get_typography_fonts_default() ) ) {
+			if ( array_key_exists( $id, $select_fonts ) || in_array( $develope_settings[ $setting ], develope_get_system_font_default() ) ) {
 				continue;
 			}
 
@@ -1062,7 +1062,7 @@ if ( ! function_exists( 'develope_add_to_font_customizer_list' ) ) {
 
 			$secondary_nav_id = strtolower( str_replace( ' ', '_', $secondary_nav_settings['font_secondary_navigation'] ) );
 
-			if ( ! array_key_exists( $secondary_nav_id, $select_fonts ) && ! in_array( $secondary_nav_settings['font_secondary_navigation'], develope_get_typography_fonts_default() ) ) {
+			if ( ! array_key_exists( $secondary_nav_id, $select_fonts ) && ! in_array( $secondary_nav_settings['font_secondary_navigation'], develope_get_system_font_default() ) ) {
 				$fonts[ strtolower( str_replace( ' ', '_', $secondary_nav_settings['font_secondary_navigation'] ) ) ] = array(
 					'name' => $secondary_nav_settings['font_secondary_navigation'],
 					'variants' => array_key_exists( $secondary_nav_id, $all_fonts ) ? $all_fonts[ $secondary_nav_id ]['variants'] : array(),

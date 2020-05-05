@@ -1,8 +1,11 @@
 <?php
 /**
- * Post meta elements.
+ * Post meta element.
+ * Builds the Post Meta section.
  *
  * @package DeveloPress
+ * 
+ * @since 2.0.6
  */
 
 if ( ! defined( 'ABSPATH' ) ) {

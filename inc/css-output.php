@@ -519,13 +519,13 @@ if ( ! function_exists( 'develope_spacing_css' ) ) {
 		$css->set_selector( '.separate-containers .inside-article, .separate-containers .comments-area, .separate-containers .page-header, .separate-containers .paging-navigation, .one-container .site-content, .inside-page-header, .wp-block-group__inner-container' );
 		$css->add_property( 'padding', develope_padding_css( $spacing_settings['content_top'], $spacing_settings['content_right'], $spacing_settings['content_bottom'], $spacing_settings['content_left'] ), develope_padding_css( $og_defaults['content_top'], $og_defaults['content_right'], $og_defaults['content_bottom'], $og_defaults['content_left'] ) );
 
-		/* Hide this right now for testing purposes with Flexbox
+		
 		$content_padding = absint( $spacing_settings['content_right'] ) + absint( $spacing_settings['content_left'] );
 		$css->set_selector( '.entry-content .alignwide, body:not(.no-sidebar) .entry-content .alignfull' );
 		$css->add_property( 'margin-left', '-' . absint( $spacing_settings['content_left'] ) . 'px' );
 		$css->add_property( 'width', 'calc(100% + ' . absint( $content_padding ) . 'px)' );
 		$css->add_property( 'max-width', 'calc(100% + ' . absint( $content_padding ) . 'px)' );
-		*/
+		
 
 		if ( 'text' === develope_get_option( 'container_alignment' ) ) {
 			$css->set_selector( '.container.grid-container' );

@@ -1,8 +1,11 @@
 <?php
 /**
- * Comment structure.
+ * Comments element
+ * Builds the comments section.
  *
  * @package DeveloPress
+ * 
+ * @since 2.0.6
  */
 
 if ( ! defined( 'ABSPATH' ) ) {

@@ -31,7 +31,7 @@ if ( class_exists( 'WP_Customize_Control' ) && ! class_exists( 'Develope_Typogra
 
 			$this->json['default_fonts_title'] = __( 'System fonts', 'developress' );
 			$this->json['google_fonts_title'] = __( 'Google fonts', 'developress' );
-			$this->json['default_fonts'] = develope_get_typography_fonts_default();
+			$this->json['default_fonts'] = develope_get_system_font_default();
 			$this->json['family_title'] = esc_html__( 'Font family', 'developress' );
 			$this->json['weight_title'] = esc_html__( 'Font weight', 'developress' );
 			$this->json['transform_title'] = esc_html__( 'Text transform', 'developress' );

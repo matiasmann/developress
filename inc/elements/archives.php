@@ -1,8 +1,11 @@
 <?php
 /**
- * Archive elements.
+ * Archive element
+ * Builds the archive page.
  *
  * @package DeveloPress
+ * 
+ * @since 2.0.6
  */
 
 if ( ! defined( 'ABSPATH' ) ) {

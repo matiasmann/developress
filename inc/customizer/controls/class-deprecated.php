@@ -52,7 +52,7 @@ if ( ! class_exists( 'Develope_Google_Font_Dropdown_Custom_Control' ) ) {
 			$this->json['google_fonts_title'] = __( 'Google fonts', 'developress' );
 			$this->json['description'] = __( 'Font family','developress' );
 			$this->json['google_fonts'] = apply_filters( 'develope_typography_customize_list', develope_get_all_google_fonts( $number_of_fonts ) );
-			$this->json['default_fonts'] = develope_get_typography_fonts_default();
+			$this->json['default_fonts'] = develope_get_system_font_default();
 		}
 
 		public function content_template() {

@@ -179,7 +179,7 @@ if ( ! function_exists( 'develope_typography_set_font_data' ) ) {
 		}
 
 		// Don't need to continue if we're using a system font or our default font
-		if ( in_array( $develope_settings['font_body'], develope_get_typography_fonts_default() ) ) {
+		if ( in_array( $develope_settings['font_body'], develope_get_system_font_default() ) ) {
 			return;
 		}
 

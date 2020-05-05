@@ -1,6 +1,7 @@
 <?php
 /**
- * Add compatibility for some popular third party plugins.
+ * Third Party Plugins Compatibility
+ * WooCommerce
  *
  * @package DeveloPress
  */
@@ -13,7 +14,7 @@ add_action( 'after_setup_theme', 'develope_setup_woocommerce' );
 /**
  * Set up WooCommerce
  *
- * @since 1.3.47
+ * @since 2.0.6
  */
 function develope_setup_woocommerce() {
 	if ( ! class_exists( 'WooCommerce' ) ) {
@@ -37,7 +38,7 @@ if ( ! function_exists( 'develope_woocommerce_start' ) ) {
 	/**
 	 * Add WooCommerce starting wrappers
 	 *
-	 * @since 1.3.22
+	 * @since 2.0.6
 	 */
 	function develope_woocommerce_start() {
 		?>
@@ -107,7 +108,7 @@ if ( ! function_exists( 'develope_woocommerce_css' ) ) {
 	/**
 	 * Add WooCommerce CSS
 	 *
-	 * @since 1.3.45
+	 * @since 2.0.6
 	 */
 	function develope_woocommerce_css() {
 		if ( ! class_exists( 'WooCommerce' ) ) {
@@ -156,113 +157,5 @@ if ( ! function_exists( 'develope_woocommerce_css' ) ) {
 
 		$css = str_replace( array( "\r", "\n", "\t" ), '', $css );
 		wp_add_inline_style( 'woocommerce-general', $css );
-	}
-}
-
-if ( ! function_exists( 'develope_bbpress_css' ) ) {
-	add_action( 'wp_enqueue_scripts', 'develope_bbpress_css', 100 );
-	/**
-	 * Add bbPress CSS
-	 *
-	 * @since 1.3.45
-	 */
-	function develope_bbpress_css() {
-		if ( ! class_exists( 'bbPress' ) ) {
-			return;
-		}
-
-		$css = '#bbpress-forums ul.bbp-lead-topic,
-		#bbpress-forums ul.bbp-topics,
-		#bbpress-forums ul.bbp-forums,
-		#bbpress-forums ul.bbp-replies,
-		#bbpress-forums ul.bbp-search-results,
-		#bbpress-forums,
-		div.bbp-breadcrumb,
-		div.bbp-topic-tags {
-			font-size: inherit;
-		}
-
-		.single-forum #subscription-toggle {
-			display: block;
-			margin: 1em 0;
-			clear: left;
-		}
-
-		#bbpress-forums .bbp-search-form {
-			margin-bottom: 10px;
-		}
-
-		.bbp-login-form fieldset {
-			border: 0;
-			padding: 0;
-		}';
-
-		$css = str_replace( array( "\r", "\n", "\t" ), '', $css );
-		wp_add_inline_style( 'bbp-default', $css );
-	}
-}
-
-if ( ! function_exists( 'develope_buddypress_css' ) ) {
-	add_action( 'wp_enqueue_scripts', 'develope_buddypress_css', 100 );
-	/**
-	 * Add BuddyPress CSS
-	 *
-	 * @since 1.3.45
-	 */
-	function develope_buddypress_css() {
-		if ( ! class_exists( 'BuddyPress' ) ) {
-			return;
-		}
-
-		$css = '#buddypress form#whats-new-form #whats-new-options[style] {
-			min-height: 6rem;
-			overflow: visible;
-		}';
-
-		$css = str_replace( array( "\r", "\n", "\t" ), '', $css );
-		wp_add_inline_style( 'bp-legacy-css', $css );
-	}
-}
-
-if ( ! function_exists( 'develope_beaver_builder_css' ) ) {
-	add_action( 'wp_enqueue_scripts', 'develope_beaver_builder_css', 100 );
-	/**
-	 * Add Beaver Builder CSS
-	 *
-	 * Beaver Builder pages set to no sidebar used to automatically be full width, however
-	 * now that we have the Page Builder Container meta box, we want to give the user
-	 * the option to set the page to full width or contained.
-	 *
-	 * We can't remove this CSS as people who are depending on it will lose their full
-	 * width layout when they update.
-	 *
-	 * So instead, we only apply this CSS to posts older than the date of this update.
-	 *
-	 * @since 1.3.45
-	 */
-	function develope_beaver_builder_css() {
-		// Check is Beaver Builder is active
-		// If we have the full-width-content class, we don't need to do anything else
-		if ( in_array( 'fl-builder', get_body_class() ) && ! in_array( 'full-width-content', get_body_class() ) && ! in_array( 'contained-content', get_body_class() ) ) {
-			global $post;
-
-			if ( ! isset( $post ) ) {
-				return;
-			}
-
-			$compare_date = strtotime( '2017-03-14' );
-			$post_date    = strtotime( $post->post_date );
-			if ( $post_date < $compare_date ) {
-				$css = '.fl-builder.no-sidebar .container.grid-container {
-					max-width: 100%;
-				}
-
-				.fl-builder.one-container.no-sidebar .site-content {
-					padding:0;
-				}';
-				$css = str_replace( array( "\r", "\n", "\t" ), '', $css );
-				wp_add_inline_style( 'develope-style', $css );
-			}
-		}
 	}
 }

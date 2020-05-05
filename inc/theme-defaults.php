@@ -2,11 +2,11 @@
 /**
  * Sets all of the theme defaults.
  * 
- * Color default options.
- * Font default options.
- * General default options.
- * Spacing default options
- * System Fonts default options
+ * Color default options. develope_get_color_defaults()
+ * Font default options. develope_get_font_defaults()
+ * General default options. develope_get_general_defaults()
+ * Spacing default options. develope_get_spacing_defaults()
+ * System Fonts default options. develope_get_system_font_default()
  * 
  * @package DeveloPress
  */
@@ -99,7 +99,7 @@ if ( ! function_exists( 'develope_get_color_defaults' ) ) {
 		);
 	}
 }
-
+						 
 if ( ! function_exists( 'develope_get_font_defaults' ) ) {
 	/**
 	 * Set Font default options.
@@ -337,7 +337,7 @@ if ( ! function_exists( 'develope_get_spacing_defaults' ) ) {
 	}
 }
 
-if ( ! function_exists( 'develope_get_typography_fonts_default' ) ) {
+if ( ! function_exists( 'develope_get_system_font_default' ) ) {
 	/**
 	 * Set System Fonts default options
 	 *
@@ -346,7 +346,7 @@ if ( ! function_exists( 'develope_get_typography_fonts_default' ) ) {
 	 * 
 	 * @since 1.3.4
 	 */
-	function develope_get_typography_fonts_default() {
+	function develope_get_system_font_default() {
 		$fonts = array(
 			'inherit',
 			'System Stack',
@@ -366,6 +366,6 @@ if ( ! function_exists( 'develope_get_typography_fonts_default' ) ) {
 			'Verdana, Geneva, sans-serif',
 		);
 
-		return apply_filters( 'develope_get_typography_fonts_default', $fonts );
+		return apply_filters( 'develope_get_system_font_default', $fonts );
 	}
 }

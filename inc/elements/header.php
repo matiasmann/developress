@@ -1,8 +1,11 @@
 <?php
 /**
- * Header elements.
+ * Header element
+ * Builds the header section.
  *
  * @package DeveloPress
+ * 
+ * @since 2.0.6
  */
 
 if ( ! defined( 'ABSPATH' ) ) {

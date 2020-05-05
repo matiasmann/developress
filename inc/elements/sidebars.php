@@ -1,8 +1,11 @@
 <?php
 /**
- * Build the sidebars.
+ * Sidebar element
+ * Build the sidebars sections
  *
  * @package DeveloPress
+ * 
+ * @since 2.0.6
  */
 
 if ( ! defined( 'ABSPATH' ) ) {

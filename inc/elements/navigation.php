@@ -1,8 +1,11 @@
 <?php
 /**
- * Navigation elements.
+ * Navigation element
+ * Builds the navigation section.
  *
  * @package DeveloPress
+ * 
+ * @since 2.0.6
  */
 
 if ( ! defined( 'ABSPATH' ) ) {

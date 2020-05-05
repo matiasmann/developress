@@ -1,8 +1,11 @@
 <?php
 /**
- * Footer elements.
+ * Footer element
+ * Builds the footer section.
  *
  * @package DeveloPress
+ * 
+ * @since 2.0.6
  */
 
 if ( ! defined( 'ABSPATH' ) ) {

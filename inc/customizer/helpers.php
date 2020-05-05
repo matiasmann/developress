@@ -272,7 +272,7 @@ function develope_do_control_inline_scripts() {
 		)
 	);
 
-	wp_localize_script( 'developress-typography-customizer', 'typography_defaults', develope_get_typography_fonts_default() );
+	wp_localize_script( 'developress-typography-customizer', 'typography_defaults', develope_get_system_font_default() );
 
 	wp_enqueue_script( 'developress-customizer-controls', trailingslashit( get_template_directory_uri() ) . 'inc/customizer/controls/js/customizer-controls.js', array( 'customize-controls', 'jquery' ), DEVELOPE_VERSION, true );
 	wp_localize_script( 'developress-customizer-controls', 'developress_defaults', develope_get_general_defaults() );
